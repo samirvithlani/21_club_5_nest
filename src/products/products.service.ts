@@ -25,13 +25,13 @@ export class ProductsService {
 
 
   findAll() {
-      return this.productModel.find()
+      return this.productModel.find().populate('category').exec()
   }
 
-  findOne(id: ObjectId): Promise<Product> {
+  findOne(id: ObjectId): Promise<any> {
     console.log("id in service", id);
     //return `This action returns a #${id} product`;
-    return this.productModel.findById(id).exec()
+    return this.productModel.findById(id).populate('category').exec()
   }
 
   update(id: ObjectId, updateProductDto: UpdateProductDto) {
