@@ -5,6 +5,10 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors({
+    origin: 'http://localhost:3001', // Change to the URL of your React app
+    credentials: true,
+  });
   const options = new DocumentBuilder()
     .setTitle('Your API Title')
     .setDescription('Your API description')

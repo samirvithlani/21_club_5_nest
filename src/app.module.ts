@@ -6,6 +6,8 @@ import { ProductsModule } from './products/products.module';
 import { CategoryModule } from './category/category.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config/dist';
+import { SocketModule } from './socket/socket.module';
+
 
 
 @Module({
@@ -15,6 +17,8 @@ import { ConfigModule } from '@nestjs/config/dist';
     ProductsModule,
     CategoryModule,
     AuthModule,
+    SocketModule,
+    
     
   ],
   controllers: [AppController],
